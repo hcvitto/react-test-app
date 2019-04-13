@@ -1,0 +1,89 @@
+header {
+	background: #000;
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px;
+	position: relative;
+}
+.burger {
+	width: 32px;
+}
+.burger span {
+	background-color: #fff;
+	border-radius: 1px;
+	display: block;
+	height: 2px;
+	margin: 9px 0;
+	width: 100%;
+	transition: all .3s;
+}
+header.active .burger span:nth-child(1) {
+	transform: rotate(45deg);
+	transform-origin: left;
+}
+header.active .burger span:nth-child(3) {
+	transform: rotate(-45deg);
+	transform-origin: left;
+}
+header.active .burger span:nth-child(2) {
+	opacity: 0;
+}
+header nav {
+	background: rgb(48, 47, 47);
+	display: none;
+	left: 0;
+	padding: 25px 0;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: 1;
+}
+header nav.active {
+	display: block;
+}
+header nav li {
+	padding: 10px 15px;
+	text-align: right;
+}
+header nav a {
+	color: #fff;
+	font-family: Lora, serif;
+	font-size: 1.5rem;
+}
+header nav a.active {
+	color: rgb(76, 126, 167);
+}
+@media screen and (min-width: 768px) {
+	.burger {
+		display: none;
+	}
+	header {
+		margin-bottom: 35px;
+		padding: 0 15px;
+	}
+	header nav {
+		background: #000;
+		display: block !important;
+		padding: 0;
+		position: relative;
+		text-align: right;
+	}
+	header nav li {
+		display: inline-block;
+		margin-left: 30px;
+		padding: 0;
+	}
+	header nav a {
+		border-bottom: 3px solid rgb(0, 0, 0);
+		color: #fff;
+		display: block;
+		font-family: sans-serif;
+		font-size: .8rem;
+		font-weight: bold;
+		padding: 15px 0;
+		text-transform: uppercase;
+	}
+	header nav a.active {
+		border-bottom: 3px solid rgb(76, 126, 167);
+	}
+}
